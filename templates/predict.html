@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Input</title>
+</head>
+<body>
+    <h1>Prediction Input</h1>
+    <form action="{{ url_for('prediction') }}" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="smokes">Smokes:</label>
+        <input type="number" id="smokes" name="smokes" required>
+        <br>
+        <label for="alkhol">Alkhol:</label>
+        <input type="number" id="alkhol" name="alkhol" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

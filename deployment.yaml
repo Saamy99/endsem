@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: endsem-flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: endsem-flask
+  template:
+    metadata:
+      labels:
+        app: endsem-flask
+    spec:
+      containers:
+      - name: endsem-flask
+        image: samy001/endsem-flask:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000

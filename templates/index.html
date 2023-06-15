@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Split Dataset</title>
+</head>
+<body>
+    <h1>Split Dataset</h1>
+    <form action="{{ url_for('split_dataset') }}" method="POST">
+        <label for="split_percentage">Split Percentage:</label>
+        <input type="number" id="split_percentage" name="split_percentage" step="0.01" min="0" max="1" required>
+        <br>
+        <label for="validation_percentage">Validation Percentage:</label>
+        <input type="number" id="validation_percentage" name="validation_percentage" step="0.01" min="0" max="1" required>
+        <br>
+        <label for="algorithm">Algorithm:</label>
+        <select id="algorithm" name="algorithm" required>
+            <option value="random_forest">Random Forest</option>
+            <option value="knn">KNN</option>
+            <option value="svm">SVM</option>
+        </select>
+        <br>
+        <label for="kfold">K-Fold (optional):</label>
+        <input type="number" id="kfold" name="kfold" step="1" min="2">
+        <br>
+        <input type="submit" value="Split Dataset">
+    </form>
+</body>
+</html>

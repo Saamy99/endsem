@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Performance</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Performance</h1>
+    <table>
+        <tr>
+            <th>Algorithm</th>
+            <th>Accuracy</th>
+        </tr>
+        {% for algorithm, accuracy in results.items() %}
+        <tr>
+            <td>{{ algorithm }}</td>
+            <td>{{ accuracy }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
